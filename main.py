@@ -23,7 +23,8 @@ def display_main_menu():
     print("2. Attend Next Patient")
     print("3. View Waiting Queue")
     print("4. View Attended Patients")
-    print("5. Exit")
+    print("5. Undo Last Attendance")
+    print("6. Exit")
     utils.print_separator()
     
 def display_patient_registration_menu():
@@ -130,6 +131,12 @@ def main():
             elif choice == '4':
                 view_attended_patients(hospital)
             elif choice == '5':
+                undo_last_attendance = hospital.undo_last_attendance()
+                if undo_last_attendance:
+                    print(f"\nLast attendance undone. Patient '{undo_last_attendance.name}' re-added to the waiting queue.")
+                else:
+                    print("\nNo attended patients to undo.")
+            elif choice == '6':
                 print("\n" + "=" * 60)
                 print("Thank you for using Hospital Urgency System!".center(60))
                 print("=" * 60 + "\n")

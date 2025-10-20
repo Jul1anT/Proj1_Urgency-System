@@ -28,6 +28,13 @@ class Hospital:
             return patient
         return None
 
+    def undo_last_attendance(self):
+        if self._attended_stack:    # Undo last attended patient
+            patient = self._attended_stack.pop()  # Remove from attended stack
+            heapq.heappush(self._priority_queue, patient) # Re-add to priority queue
+            return patient
+        return None
+
     def get_attended_patients(self):
         return self._attended_stack
 
