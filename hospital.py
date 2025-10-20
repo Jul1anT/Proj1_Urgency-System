@@ -12,10 +12,14 @@ class Hospital:
         self._attended_stack = [] # Stack for managing attended patients
         self._all_patients = [] # List for managing all patients
 
-    """Methods to manage patients in the hospital."""
     def add_patient(self, patient):
+        """Methods to manage patients in the hospital."""   
         heapq.heappush(self._priority_queue, patient) # Add to priority queue
         self._all_patients.append(patient)  # Add to all patients list
+
+    def waiting_patients(self):
+        """Return sorted copy of waiting patients without modifying heap."""
+        return sorted(self._priority_queue)
 
     def attend_patient(self):
         if self._priority_queue:    # Attend to the highest priority patient

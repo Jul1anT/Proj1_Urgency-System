@@ -1,4 +1,12 @@
-""""Main module for the Hospital Urgency System application."""
+"""
+Main module for the Hospital Urgency System application.
+
+Arguments:
+    Main module for the Hospital Urgency System application.
+
+Returns:
+    None
+"""
 
 from hospital import Hospital
 from patient import Patient
@@ -6,6 +14,9 @@ from patient import Patient
 import utils
 
 def display_main_menu():
+    """
+    Display the main menu options for the hospital waiting system.
+    """
     utils.clear_screen()
     utils.print_header("HOSPITAL WAITING SYSTEM")
     print("1. Register New Patient")
@@ -98,6 +109,7 @@ def view_attended_patients(hospital):
 
 def main():
     hospital = Hospital("HOSPITAL URGENCY SYSTEM")
+    queue = hospital.waiting_patients()
 
     utils.clear_screen()
     utils.print_header(f"Welcome to {hospital.hospital_name}")
