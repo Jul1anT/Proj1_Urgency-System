@@ -1,6 +1,6 @@
-# Hospital Urgency System �
+# Hospital Urgency System
 
-## Project Overview
+## 📚 Project Overview
 
 This program simulates a hospital emergency triage system where patients are managed through priority queues based on medical urgency levels, with complete tracking of attended patients.
 
@@ -57,7 +57,7 @@ This program simulates a hospital emergency triage system where patients are man
 
 ---
 
-## Key Features
+## 🔑 Key Features
 
 - Medical Triage Priority Management
 - Professional Interface
@@ -65,7 +65,7 @@ This program simulates a hospital emergency triage system where patients are man
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Proj1_Urgency-System/
@@ -79,7 +79,7 @@ Proj1_Urgency-System/
 
 ---
 
-## Example Usage
+## 🖥️ Example Usage
 
 ### Typical Workflow
 
@@ -121,7 +121,7 @@ Proj1_Urgency-System/
 
 ---
 
-## Technical Details
+## 📄 Technical Details
 
 ### Priority Queue Implementation
 Uses Python's `heapq` module:
@@ -144,7 +144,7 @@ Uses Python list:
 
 ---
 
-## Notes
+## 🗒️ Notes
 
 - The system uses medical triage urgency levels (1-5)
 - Priority queue ensures critical patients are seen first

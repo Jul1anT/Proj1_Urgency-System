@@ -1,3 +1,5 @@
+""""Main module for the Hospital Urgency System application."""
+
 from hospital import Hospital
 from patient import Patient
 
@@ -28,6 +30,7 @@ def register_patient(hospital):
     display_patient_registration_menu()
     
     try:
+        # Get urgency level and patient name
         urgency_level = int(input("\nEnter urgency level (1-5): "))
         if urgency_level not in range(1, 6):
             print("Invalid urgency level! Please enter a number between 1 and 5.")
@@ -53,7 +56,7 @@ def attend_next_patient(hospital):
     utils.print_header("ATTEND NEXT PATIENT")
     
     patient = hospital.attend_patient()
-    if patient:
+    if patient:  # If a patient was attended
         print(f"\nNow attending: {patient.name}")
         print(f"  Urgency Level: {Patient.URGENCY_LEVELS[patient.urgency_level]}")
     else:
@@ -64,13 +67,13 @@ def attend_next_patient(hospital):
 def view_waiting_queue(hospital):
     utils.print_header("WAITING QUEUE")
     
-    queue = sorted(hospital._priority_queue)
-    
-    if not queue:
+    queue = sorted(hospital._priority_queue)  # Get sorted list of waiting patients
+
+    if not queue:  # If no patients are waiting
         print("\nNo patients in the waiting queue.")
     else:
         print(f"\nTotal patients waiting: {len(queue)}\n")
-        for idx, patient in enumerate(queue, start=1):
+        for idx, patient in enumerate(queue, start=1):  # Enumerate patients
             print(f"{idx}. {patient.name}")
             print(f"   Urgency: {Patient.URGENCY_LEVELS[patient.urgency_level]}")
             print()
@@ -99,6 +102,7 @@ def main():
     utils.clear_screen()
     utils.print_header(f"Welcome to {hospital.hospital_name}")
     
+    # Main application loop
     while True:
         display_main_menu()
         
@@ -123,13 +127,14 @@ def main():
             
             input("\nPress Enter to continue...")
             
-        except KeyboardInterrupt:
+        except KeyboardInterrupt:  # Handle Ctrl+C gracefully
             print("\n\nExiting system...")
             break
-        except Exception as e:
+        except Exception as e:  # Handle other exceptions
             print(f"\nAn error occurred: {e}")
             input("\nPress Enter to continue...")
 
+# Run the main application
 if __name__ == "__main__":
     main()
 

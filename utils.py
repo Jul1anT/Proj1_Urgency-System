@@ -1,3 +1,5 @@
+"""Utility functions for displaying information in the urgency system."""
+
 def clear_screen():
     import os
     os.system('clear' if os.name != 'nt' else 'cls')
@@ -16,6 +18,7 @@ def print_patient_info(patient):
 
 def print_waiting_queue(queue):
     print_header("WAITING QUEUE")
-    for idx, patient in enumerate(queue, start=1):
+    for idx, patient in enumerate(queue, start=1):  # Enumerate patients
         print(f"{idx}. {patient.name} - Urgency Level: {patient.urgency_level}")
+        # Print additional patient information if needed
     print_separator()
