@@ -1,5 +1,6 @@
 """Module defining the Patient class with urgency levels."""
 
+
 class Patient:
 
     # Urgency levels constants
@@ -19,7 +20,6 @@ class Patient:
         return self.URGENCY_LEVELS.get(self.urgency_level, "UNKNOWN")
 
     # Comparison methods for priority queue
+
     def __lt__(self, other):
         return self.urgency_level < other.urgency_level
-
-        
