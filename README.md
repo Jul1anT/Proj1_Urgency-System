@@ -142,3 +142,6 @@ Uses Python list:
 - View history: O(1) to O(k)
 - Statistics: O(n)
 
+## Video 
+[Hospital Urgency System] (https://youtu.be/kU9ilTaz1kA?si=OBxdVVfzvmmWUvpJ)
+
