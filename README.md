@@ -143,5 +143,5 @@ Uses Python list:
 - Statistics: O(n)
 
 ## Video 
-[Hospital Urgency System] (https://youtu.be/kU9ilTaz1kA?si=OBxdVVfzvmmWUvpJ)
+[Hospital Urgency System] (https://youtu.be/t-WSet4_tr0)
 
